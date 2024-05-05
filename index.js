@@ -11,6 +11,12 @@ app.use(express.json());
 
 app.use("/url", shortURL);
 
+app.get("/", async (req, res) => {
+  res.status(200).json({
+    message:"Successfully fetch the api"
+  })
+})
+
 app.listen(5001, () => {
   return console.log(`server is running on port ${Port || 5004}`);
 });
